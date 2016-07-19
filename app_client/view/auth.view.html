@@ -1,0 +1,96 @@
+<navigation></navigation>
+
+<div class="container">
+    <page-header content="vm.pageHeader"></page-header>
+    <form id="addPolicy" name="addPolicy" role="form" ng-submit="vm.addPolicy()" class="form-horizontal">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="error">{{ vm.message }}</div>
+            </div>
+            <div class="form-group">
+                <div class="row voffset3 ">
+                    <label for="domainId" class="col-sm-3 control-label">Domain ID: </label>
+                    <div class="col-sm-9">
+                        <input id="domainId" type="text" name="domainId" rows="5" required="required" ng-model="vm.domain_id" class="form-control" disabled></input>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row voffset3 ">
+                    <label for="policyVer" class="col-sm-3 control-label">Policy version number: </label>
+                    <div class="col-sm-9">
+                        <input id="policyVer" type="text" name="policyVer" rows="5" ng-model="vm.policy_ver" class="form-control" disabled></input>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row voffset3 ">
+                    <label for="applicationID" class="col-sm-3 control-label">Applicaiton ID: </label>
+                    <div class="col-sm-9">
+                        <select id="applicationID" class="form-control" data-live-search="true" ng-model="vm.application_id" required="required">
+                            <option value="" disabled selected>Select application</option>
+                            <!--                    <option data-tokens="{{consumer.id}}" ng-repeat="consumer in vm.consumers">{{consumer.name}}</option>-->
+                            <option value="{{consumer.id}}" ng-repeat="consumer in vm.consumers">{{consumer.name}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div ng-repeat="rule in vm.rules">
+                    <div class="col-sm-12 well">
+                        <div class="col-sm-3">
+                            <input type="text" name="ruleName" rows="5" ng-model="rule.name" class="form-control" placeholder="rule name" required="required"></input>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" name="subResource" rows="5" ng-model="rule.subResource" class="form-control" placeholder="subresource" required="required"></input>
+                        </div>
+                        <div class="col-sm-3">
+                            <select id="Action" class="form-control" data-live-search="true" ng-model="rule.action" required="required">
+                                <option value="" disabled selected>Select action</option>
+                                <option>GET</option>
+                                <option>POST</option>
+                                <option>PUT</option>
+                                <option>DELETE</option>
+                                <option>PUB</option>
+                                <option>SUB</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <select id="role" class="form-control" data-live-search="true" ng-model="rule.role" required="required">
+                                <option value="" disabled selected>Select role permit</option>
+                                <!--                    <option data-tokens="{{consumer.id}}" ng-repeat="consumer in vm.consumers">{{consumer.name}}</option>-->
+                                <option ng-repeat="role in vm.roles">{{role.id}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div class="col-xs-12 col-sm-12" role="group">
+            <button type="button" class="btn btn-success btn-space" ng-click="vm.addRule()">
+                Add Rule
+            </button>
+            <button type="submit" class="btn btn-info btn-space">
+                Add Policy
+            </button>
+<!--
+            <button type="submit" class="btn btn-info btn-space" ng-click="vm.addPolicy()">
+                Add Policy
+            </button>
+-->
+        </div>
+
+        <div class="col-xs-12 col-sm-12" role="group">
+<!--            <a target="_self" id="downloadPolicy" href={{vm.downloadPolicyUrl}} ng-click="vm.showPolicyWindow()"> download latest policy </a>-->
+            <a target="_self" id="downloadPolicy" ng-click="vm.showPolicyWindow()"> download latest policy </a>
+            
+        </div>
+    </form>
+
+
+    <footer-generic></footer-generic>
+</div>

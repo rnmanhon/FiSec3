@@ -1,0 +1,98 @@
+<!--
+<div class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+-->
+<div class="modal-content">
+    <form id="addUser" name="addUser" role="form" ng-submit="vm.onSubmit()" class="form-horizontal">
+        <div class="modal-header">
+            <button type="button" ng-click="vm.modal.cancel()" class="close">
+                <span aria-hidden="true">×</span>
+                <span class="sr-only">Close</span>
+            </button>
+            <h4 id="myModalLabel" class="modal-title">Add new user . . .</h4>
+        </div>
+        <div class="modal-body">
+            <div role="alert" ng-show="vm.formError" class="alert alert-danger">{{ vm.formError }}</div>
+
+            <!--            <div class="well well-lg">-->
+            <!--
+               <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4 class="panel-title"> Create by </h4>
+                </div>
+
+                <div class="form-group">
+                    <label for="name" class="col-sm-2 control-label">Name</label>
+                    <div class="col-sm-10">
+                        <input id="name" type="text" name="name" rows="5" required="required" ng-model="vm.formData.name" class="form-control"></input>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="col-sm-2 control-label">Password</label>
+                    <div class="col-sm-10">
+                        <input id="password" type="password" name="password" rows="5" required="required" ng-model="vm.formData.password" class="form-control password"></input>
+                    </div>
+                </div>
+            </div>
+-->
+            <!--
+            <div class="divider">
+            </div>
+-->
+
+            <div class="form-group">
+                <label for="name" class="col-sm-2 control-label">Name</label>
+                <div class="col-sm-10">
+                    <input id="name" type="text" name="name" rows="5" required="required" ng-model="vm.formData.name" class="form-control"></input>
+                </div>
+            </div>
+<!--
+            <div class="form-group">
+                <label for="userName" class="col-sm-2 control-label">User name</label>
+                <div class="col-sm-10">
+                    <input id="userName" type="text" name="userName" rows="5" required="required" ng-model="vm.formData.userName" class="form-control"></input>
+                </div>
+            </div>
+-->
+            <div class="form-group">
+                <label for="password" class="col-sm-2 control-label">Password</label>
+                <div class="col-sm-10">
+                    <input id="password" type="password" name="password" rows="5" required="required" ng-model="vm.formData.password" class="form-control password"></input>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="defaultProjectId" class="col-sm-2 control-label">Default Project ID</label>
+                <div class="col-sm-10">
+                    <input id="defaultProjectId" type="text" name="defaultProjectId" rows="5" ng-model="vm.formData.defaultProjectId" class="form-control"></input>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="description" class="col-sm-2 control-label">Description</label>
+                <div class="col-sm-10">
+                    <input id="description" type="text" name="description" rows="5"  ng-model="vm.formData.description" class="form-control"></input>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="domainId" class="col-sm-2 control-label">Domain ID</label>
+                <div class="col-sm-10">
+                    <input id="domainId" type="text" name="domainId" rows="5"  ng-model="vm.formData.domainId" class="form-control" ng-init="vm.formData.domainId='default'" disabled></input>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email" class="col-sm-2 control-label">e-mail</label>
+                <div class="col-sm-10">
+                    <input id="email" type=" email" name="email" rows="5"  ng-model="vm.formData.email" class="form-control"></input>
+                </div>
+            </div>
+            <input id="enabled" type="checkbox" name="enabled" ng-model="vm.formData.enabled" ng-init="vm.formData.enabled=true">Enable</input>
+
+            <div class="modal-footer">
+                <button ng-click="vm.modal.cancel()" type="button" class="btn btn-default">Cancel</button>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+    </form>
+    </div>
+    <!--
+    </div>
+</div>-->

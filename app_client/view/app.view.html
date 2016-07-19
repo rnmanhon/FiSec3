@@ -1,0 +1,65 @@
+<navigation></navigation>
+
+<div class="container">
+    <page-header content="vm.pageHeader"></page-header>
+
+
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <div class="error">{{ vm.message }}</div>
+        </div>
+
+
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-info" ng-init="user.open = false" ng-repeat="consumer in vm.consumers">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a  data-target="#collapse{{consumer.name}}" 
+                        data-toggle="collapse" data-parent="#accordion" 
+                        href="/#app"> 
+                        {{ consumer.name }}
+                        </a> 
+      </h4>
+                </div>
+                <div id="collapse{{consumer.name}}" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <li> id: {{consumer.id}} </li>
+                        <li> description: {{consumer.description}} </li>
+                        <li> links : {{consumer.links.self}} </li>
+                        <li> grant type: {{consumer.grant_type}} </li>
+                        <li> url: {{consumer.url}} </li>
+                        <li> client type: {{consumer.client_type}} </li>
+                        <li> response type: {{consumer.response_type}} </li>
+                        <li> extra url: {{consumer.extra.url}} </li>
+                        <li> url: {{consumer.url}} </li>
+                        <a data-target="#collapse{{consumer.name}}" data-toggle="collapse" data-parent="#accordion" href="http://u.ray:8000/oauth2/authorize?response_type={{consumer.response_type}}&client_id={{consumer.id}}&redirect_uri={{consumer.url}}&state={{consumer.id}}"> 
+                        login to {{ consumer.name }} 
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12" role="group">
+            <button type="button" class="btn btn-info btn-space" ng-click="vm.onRefresh()">
+                Refresh from Keystoone
+            </button>
+<!--
+            <button type="button" class="btn btn-success btn-space" ng-click="vm.popupNewAppForm()" ng-disabled="vm.loginToken == undefined">
+                Add application
+            </button>
+-->
+        </div>
+        <div id="tokenResult">
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12"><small class="pull-left">authorized application: {{vm.authorizedApp}}</small></div>
+            <div class="col-xs-12"><small class="pull-left">access token: {{vm.appAccessToken}}</small></div>
+            <div class="col-xs-12"><small class="pull-left">current user token: {{vm.loginToken}}</small></div>
+        </div>
+
+        <footer-generic></footer-generic>
+    </div>
+</div>    

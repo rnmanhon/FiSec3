@@ -1,0 +1,14 @@
+		<Target>
+			<AnyOf>
+				<AllOf>
+					<Match MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+						<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">{{appId}}</AttributeValue>
+						<AttributeDesignator
+							Category="urn:oasis:names:tc:xacml:3.0:attribute-category:resource"
+							AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id"
+							DataType="http://www.w3.org/2001/XMLSchema#string"
+							MustBePresent="true" />
+					</Match>
+				</AllOf>
+			</AnyOf>
+		</Target>

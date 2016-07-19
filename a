@@ -1,0 +1,3 @@
+Express server listening on port 3000
+get request body -> undefined
+get querryr string msg -> server1

@@ -1,0 +1,52 @@
+<navigation></navigation>
+
+<div class="container">
+    <page-header content="vm.pageHeader"></page-header>
+
+
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <div class="error">{{ vm.message }}</div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-12 well">
+                <div class="col-sm-3">
+                    <input type="text" name="urlPrefix" rows="5" ng-model="vm.remoteApp.urlPrefix" class="form-control" ng-init="vm.remoteApp.urlPrefix=vm.defaultUrlPrefix" disabled />
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" name="urlSuffix" rows="5" ng-model="vm.remoteApp.urlSuffix" class="form-control" placeholder="e.g. fiwareApp or siteWhereApp" />
+                </div>
+                <div class="row col-sm-3">
+                    <button type="button" class="btn btn-info btn-space" ng-click="vm.getRemote()">
+                        Get
+                    </button>
+                    <button type="button" class="btn btn-info btn-space" ng-click="vm.postRemote()">
+                        Post
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--
+        <div class="col-xs-12 col-sm-12" role="group">
+            <button type="button" class="btn btn-info btn-space" ng-click="vm.onRefresh()">
+                Refresh from Keystoone
+            </button>
+            <button type="button" class="btn btn-success btn-space" ng-click="vm.popupNewAppForm()" ng-disabled="vm.loginToken == undefined">
+                Add application
+            </button>
+        </div>
+-->
+        <div id="tokenResult">
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12"><small class="pull-left">authorized application: {{vm.authorizedApp}}</small></div>
+
+            <div class="col-xs-12"><small class="pull-left">access token: {{vm.appAccessToken}}</small></div>
+        </div>
+
+        <footer-generic></footer-generic>
+    </div>
+</div>

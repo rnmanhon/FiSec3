@@ -1,0 +1,59 @@
+<navigation></navigation>
+
+<div class="container">
+    <page-header content="vm.pageHeader"></page-header>
+
+
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <div class="error">{{ vm.message }}</div>
+        </div>
+
+
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-info" ng-init="user.open = false" ng-repeat="user in vm.users">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a  data-target="#collapse{{user.name}}" 
+                        data-toggle="collapse" data-parent="#accordion" 
+                        href="/#user"> 
+                        {{ user.name }}
+                        </a> 
+      </h4>
+                </div>
+                <div id="collapse{{user.name}}" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <li> user name : {{user.username}} </li>
+                        <li> id: {{user.id}} </li>
+                        <li> name: {{user.name}} </li>
+                        <li> link: {{user.links}} </li>
+                        <li> domain id: {{user.domain_id}} </li>
+                        <li> enabled: {{user.enabled}} </li>
+                        <li> default project id: {{user.default_project_id}} </li>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12" role="group">
+            <button type="button" class="btn btn-info btn-space" ng-click="vm.onRefresh()" ng-disabled="vm.loginToken == undefined">
+                Refresh from Keystoone
+            </button>
+            <button type="button" class="btn btn-primary btn-space" ng-click="vm.popupLoginForm()">
+                login
+            </button>
+            <button type="button" class="btn btn-success btn-space" ng-click="vm.popupNewUserForm()" ng-disabled="vm.loginToken == undefined">
+                Add user
+            </button>
+        </div>
+        <div id="tokenResult">
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12"><small class="pull-left">current user token: {{vm.loginToken}}</small></div>
+        </div>
+
+        <footer-generic></footer-generic>
+    </div>
+</div>

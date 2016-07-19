@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PolicySet xmlns="urn:oasis:names:tc:xacml:3.0:core:schema:wd-17"
+	PolicySetId="root" Version="{{version}}"
+	PolicyCombiningAlgId="urn:oasis:names:tc:xacml:3.0:policy-combining-algorithm:deny-unless-permit">
+	<Description>Public PolicySet</Description>
+	<Target />
+	<Policy PolicyId="MyApp2Private" Version="1.0"
+		RuleCombiningAlgId="urn:oasis:names:tc:xacml:3.0:rule-combining-algorithm:deny-unless-permit">
+		<Description>Private for MyApp2</Description>
+{{policy.target}}
+{{policy.rule}}
+	</Policy>
+</PolicySet>

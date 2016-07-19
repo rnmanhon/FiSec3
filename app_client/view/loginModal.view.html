@@ -1,0 +1,49 @@
+<!--
+<div class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+-->
+<div class="modal-content">
+    <form id="login" name="login" role="form" ng-submit="vm.onSubmit()" class="form-horizontal">
+        <div class="modal-header">
+            <button type="button" ng-click="vm.modal.cancel()" class="close">
+                <span aria-hidden="true">×</span>
+                <span class="sr-only">Close</span>
+            </button>
+            <h4 id="myModalLabel" class="modal-title">Login</h4>
+        </div>
+        <div class="modal-body">
+            <div role="alert" ng-show="vm.formError" class="alert alert-danger">{{ vm.formError }}</div>
+
+                <div class="form-group">
+                    <label for="name" class="col-sm-2 control-label">Name</label>
+                    <div class="col-sm-10">
+                        <input id="name" type="text" name="name" rows="5" required="required" ng-model="vm.formData.name" class="form-control"></input>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="col-sm-2 control-label">Password</label>
+                    <div class="col-sm-10">
+                        <input id="password" type="password" name="password" rows="5" required="required" ng-model="vm.formData.password" class="form-control password"></input>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="domainId" class="col-sm-2 control-label">Domain ID</label>
+                    <div class="col-sm-10">
+                        <input id="domainId" type="text" name="domainId" rows="5" ng-model="vm.formData.domainId" class="form-control"  disabled ng-init="vm.formData.domainId='default'"></input>
+                    </div>
+                </div>
+
+
+
+
+            <div class="modal-footer">
+                <button ng-click="vm.modal.cancel()" type="button" class="btn btn-default">Cancel</button>
+                <button type="submit" class="btn btn-success">Login</button>
+            </div>
+    </form>
+    </div>
+    <!--
+    </div>
+</div>-->

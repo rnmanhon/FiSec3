@@ -1,0 +1,84 @@
+.review {
+    padding-bottom: 5px;
+}
+
+.panel-body.review-container {
+    padding-top: 0;
+}
+
+.review-header {
+    margin-bottom: 10px;
+}
+
+.reviewAuthor {
+    margin: 0 5px;
+}
+
+.reviewTimestamp {
+    color: #ccc;
+}
+
+.label-facility {
+    margin-right: 2px
+}
+
+
+/*.rating-stars {margin-left: 3px;}*/
+
+#filter {
+    margin-left: 4px;
+}
+
+.modal {
+    display: block;
+}
+
+.voffset  { margin-top: 2px; }
+.voffset1 { margin-top: 5px; }
+.voffset2 { margin-top: 10px; }
+.voffset3 { margin-top: 15px; }
+.voffset4 { margin-top: 30px; }
+.voffset5 { margin-top: 40px; }
+.voffset6 { margin-top: 60px; }
+.voffset7 { margin-top: 80px; }
+.voffset8 { margin-top: 100px; }
+.voffset9 { margin-top: 150px; }
+
+.angular-leaflet-map svg{
+   width: initial;
+   height: initial;
+ } 
+
+/*
+html,
+body,
+#map {
+    height: 100%;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+*/
+
+
+/*
+html,
+body,
+#map {
+    height: 100%;
+}
+*/
+
+
+/*
+.divider {
+  height: 1px;
+  width:100%;
+  display:block;  for use on default inline elements like span 
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #C0C0C0;
+}
+*/

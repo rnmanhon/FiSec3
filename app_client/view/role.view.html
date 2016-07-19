@@ -1,0 +1,51 @@
+<navigation></navigation>
+
+<div class="container">
+    <page-header content="vm.pageHeader"></page-header>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <div class="error">{{ vm.message }}</div>
+        </div>
+
+
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-info" ng-repeat="role in vm.roles">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a  data-target="#collapse{{role.name}}" 
+                        data-toggle="collapse" data-parent="#accordion" 
+                        href="/#role"> 
+                        {{ role.name }}
+                        </a> 
+      </h4>
+                </div>
+                <div id="collapse{{role.name}}" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <li> id: {{role.id}} </li>
+                        <li> name: {{role.name}} </li>
+                        <li> application_id: {{role.application_id}} </li>
+                        <li> links: {{role.links.self}} </li>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12" role="group">
+            <button type="button" class="btn btn-info btn-space" ng-click="vm.onRefresh()" ng-disabled="vm.loginToken == undefined">
+                Refresh from Keystoone
+            </button>
+            <button type="button" class="btn btn-success btn-space" ng-click="vm.popupNewRoleForm()" ng-disabled="vm.loginToken == undefined">
+                Add role
+            </button>
+        </div>
+        <div id="tokenResult">
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12"><small class="pull-left">current user token: {{vm.loginToken}}</small></div>
+        </div>
+
+        <footer-generic></footer-generic>
+    </div>
+</div>    

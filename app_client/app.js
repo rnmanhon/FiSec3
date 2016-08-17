@@ -47,6 +47,11 @@
                 controller: 'mapController',
                 controllerAs: 'vm'
             })
+            .when('/facebook', {
+                templateUrl: '/view/facebook.view.html',
+                controller: 'facebookController',
+                controllerAs: 'vm'
+            })
             .when('/secApp', {
                 templateUrl: '/view/secapp.view.html',
                 controller: 'secappController',

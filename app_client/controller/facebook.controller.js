@@ -8,76 +8,33 @@
     //
     //    function userController($scope,  userService) {    
     //    function userController($scope,  userService) {    
-    userController.$inject = ['$scope', '$uibModal', 'userService'];
+    userController.$inject = ['$scope', '$uibModal', 'fbService'];
 
-    function facebookController($scope, $uibModal, userService) {
+    function facebookController($scope, $uibModal, fbService) {
         console.log("inside userController ...");
 
-        //        // check if lodash work
-        //        var array = [1];
-        //        var other = _.concat(array, 2, [3], [
-        //            [4]
-        //        ]);
-        //        console.log('lodash working ...' + other);
-
         var vm = this;
-        vm.loginToken = userService.loginToken;
-        
         vm.pageHeader = {
             title: 'Facebook Test',
             strapline: 'login test'
         };
         vm.message = "";
 
-
-        vm.popupLoginForm = function() {
-            console.log("userController userController ...");
-
-            var uibModalInstance = $uibModal.open({
-                templateUrl: '/view/loginModal.view.html',
-                controller: 'loginController as vm',
-            }); // $uibModal.open
-            uibModalInstance.result.then(function(data) {
-                userService.loginToken = data.token;
-                vm.loginToken = userService.loginToken;
-                console.log("userController userController return token " + vm.loginToken);
-            });
-        }; // popupNewUserForm        
-
-        vm.onRefresh = function() {
-            console.log("userController onaRefresh ...");
-
-            vm.message = "loading ...";
-            userService.users({
-                    userToken: vm.loginToken,
-                })
+        vm.fbLogin = function() {
+            console.log("facebookController fbLogin ...");
+            fbService.login()
                 .success(function(data) {
+                // get friends and profile data, or even timeline
                     console.log("data %j", data);
-                    vm.users = data.users;
-                    console.log("user list %j", vm.users);
-                    vm.message = "";
+//                    vm.users = data.users;
+//                    console.log("user list %j", vm.users);
+//                    vm.message = "";
                 })
                 .error(function(e) {
                     console.log(e);
                     vm.message = e;
                 });
-        };
-
-        vm.popupNewUserForm = function() {
-            console.log("userController popupNewUserForm ...");
-
-            var uibModalInstance = $uibModal.open({
-                    templateUrl: '/view/addUserModal.view.html',
-                    controller: 'addUserController as vm',
-                    resolve: {
-                        creator: function() {
-                            return {
-                                userToken: vm.loginToken,
-                            };
-                        }
-                    }
-                }) // $uibModal.open
-        }; // popupNewUserForm
+        }; 
 
     }; // userController
-})(); // function()
+})(); // function() 

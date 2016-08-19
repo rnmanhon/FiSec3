@@ -6,9 +6,27 @@
 
     mapService.$inject = ['$http'];
 
-
-
     function mapService($http) {
+
+        var config = {};
+        config.region = {
+            NW: {
+                longitude: 114.1544
+                , latitude: 22.3221
+            }
+            , NE: {
+                longitude: 114.1604
+                , latitude: 22.3221
+            }
+            , SE: {
+                longitude: 114.1604
+                , latitude: 22.3168
+            }
+            , SW: {
+                longitude: 114.1544
+                , latitude: 22.3168
+            }
+        };
 
         var getRandomPointInRegion = function () {
             var randomPoint = {
@@ -46,6 +64,8 @@
             findRoute: findRoute
             , decodeRouteGeometory: decodeRouteGeometory
             , getRandomPointInRegion: getRandomPointInRegion
+
+
             
         , };
     }

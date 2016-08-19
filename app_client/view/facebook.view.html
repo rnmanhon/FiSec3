@@ -12,10 +12,9 @@
 
 
         <div class="col-xs-12 col-sm-12" role="group">
-
-            <button type="button" class="btn btn-primary btn-space" ng-click="vm.popupFbLoginForm()">
-                login
-            </button>
+            <form method="GET" action="/lfacebookogin" name="login">
+                <input type="submit" value="Facebook Login" />
+            </form>
         </div>
 
         <footer-generic></footer-generic>
